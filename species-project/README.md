@@ -22,14 +22,3 @@ Lucas slices the first in 5 pieces.
 But for second it's totally different: he slices in 5 pieces then send all of them to your family.
 Advice : Don't sleep during the night.
 
-ouvrir strapi local
-cd desktop/app-simplon/species-project-strapi
-npx strapi develop
-
-push local strapi to heroku
-git add .
-git commit -am "Changes to my-project noted"
-git push heroku HEAD:main
-heroku open
-
-
