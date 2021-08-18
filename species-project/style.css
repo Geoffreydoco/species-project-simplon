@@ -29,3 +29,17 @@
 background-color: rgb(180, 135, 135);
  
  }
+
+
+
+ /* CSS de page articles     */
+
+.imgarticle img{
+   max-width: 300px;
+   max-height: 300px;
+ }
+
+ .imgarticle{
+  position: relative;
+  display: inline-block;
+ }
