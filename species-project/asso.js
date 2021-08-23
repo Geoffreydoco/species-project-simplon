@@ -22,16 +22,23 @@ function fetcharticle() {
       pageasso.innerHTML = (
         data.map(data =>
           `
-          <div class="col-12 col-md-6 cart1">
-           <div class="h-100 p-5 text-white bg-dark rounded-3">           
-           <img src="http://localhost:1337${data.Logo.url}" class="logoasso" </p>
-            <h2>${data.Titre}</h2>
-            <p>Email : ${data.ContactMail}</p>
-            <p>tel : ${data.Telephone}</p>
-            <p>${data.presentation} </p>
+          <div class="col-md-4 mb-4 ">
+          <div class="card profile-card-3  cartassopresentation ">
+              <div class="background-block bckpageassocart"></div>
+              <div class="profile-thumb-block">
+                  <img src="http://localhost:1337${data.Logo.url}" alt="profile-image" class="profile imglogopageasso"/>
+              </div>
+              <div class="card-content ">
+                  <h2>${data.Titre}<small><p>Email : ${data.ContactMail}</p>  <p>tel : ${data.Telephone}</p>  </small> </h2> 
+                  <p class="presentation">${data.presentation} </p>
+                  <button type="button" class="btn btn-dark btncartpageasso"><a href="${data.pageweb}" target="_blank">Aller sur le site</a></button>
+                  </div>
+              </div>     
+        </div>
+        
+        
              
-          </div> 
-          </div>`
+          `
          
         )
       ).join('')
@@ -39,7 +46,6 @@ function fetcharticle() {
     }
     )
 }
-
 
 // const results = document.getElementById('results');
 
