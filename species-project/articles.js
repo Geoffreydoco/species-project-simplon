@@ -1,12 +1,16 @@
 const pagearticle = document.querySelector(".pagearticles");
 
 
-fetcharticle();
-function fetcharticle() {
-    const Cartes = fetch('http://localhost:1337/articles ')
+fetcharticle("");
+function fetcharticle(valeur) {
+    const Cartes = fetch('http://localhost:1337/articles?titre_contains='+valeur)
         .then(response => response.json())
         .then(data => {
             console.log(data);
+            if (data.length==0){
+                pagearticle.innerHTML = "<span class='messageerreur'>Aucun article ne correspond à votre recherche</span>"
+            }
+            else
             ///insert here data    
             pagearticle.innerHTML = (
                 data.map(data =>
@@ -27,13 +31,17 @@ function fetcharticle() {
       </div>
       </div>
           `
-
                 )
             ).join('')
-
         }
         )
 }
+
+let barrederecherche = document.querySelector(".searcharticle");
+barrederecherche.addEventListener('input', (e) =>{
+    valeursaisierecherche = e.target.value;    
+    fetcharticle(valeursaisierecherche);
+});
 
 
 

@@ -21,13 +21,13 @@ function fetcharticle() {
       pageasso.innerHTML = (
         data.map(data =>
           `
-          <div class="col-md-6 col-xl-4 mb-3 ">
+          <div class="col-md-6 col-xl-4 mb-3">
           <div class="card text-white card-has-bg click-col cardaccueil"
             style="background-image:url('http://localhost:1337${data.imagearticle.url}');">
        
             <div class="card-img-overlay d-flex flex-column">
               <div class="card-body">
-                <h4 class="card-title mt-0  "><p class="text-white" herf="#">${data.titre}</p></h4>
+                <h4 class="card-title mt-0  "><p class="text-white titreart" herf="#">${data.titre}</p></h4>
                 <div class="presentation " >${data.resume}</div>
               </div>
               <div class="">
@@ -45,11 +45,18 @@ function fetcharticle() {
          
         )
       ).join('')
+      
+let blockasso = document.querySelector(".pagecartes");
+let titrearticle = document.querySelector(".titreart");
+blockasso.addEventListener('click', (event) => {
+ let articlerecherche = titrearticle.innerHTML;
+  console.log(articlerecherche);
+  window.location.href= "http://127.0.0.1:5500/species-project/article.html/'"+articlerecherche+'"';
 
+})
     }
     )
 }
-
 
 const assoacceuil = document.querySelector(".pageacceuil");
 
@@ -101,7 +108,7 @@ function fetchasso() {
       carteassoacceuil.innerHTML = (
         data.map(data =>
           ` 
-          <div class="col-md-6 col-xl-3 ">
+          <div class="col-md-6 col-xl-3 mb-3 ">
           <div class="card-sl containeraccueilass">
               <div class="card-image">
                   <img
