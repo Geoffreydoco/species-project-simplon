@@ -1,6 +1,6 @@
 # species-project
 
-Project de Groupe fil Rouge Simplon
+Project de Groupe fil Rouge Simplon PROMO MS Developpeur d'application Ete 2021 ROUBAIX
 Membre de l'équipe - Emna, Sabine, Geoffrey
 
 Ce dossier contient :
