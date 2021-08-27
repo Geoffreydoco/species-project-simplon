@@ -1,24 +1,20 @@
 # species-project
 
-Project de Groupe
+Project de Groupe fil Rouge Simplon
+Membre de l'équipe - Emna, Sabine, Geoffrey
 
-Team Members :
+Ce dossier contient :
+- 4 pages html (Index, Asso, article et contact)
+- 3 pages js (Une pour les trois premières pages)
+- 2 fichiers CSS (général et bootstrap)
+- 2 Maquettes en PDF (mobile et PC)
+- 1 fichier read-me ici présent
+- 1 dossiers d'images par défault
 
-- Emna Bazooka
-Dangerous activist in Roubaix.
-She has fully distroyed six slaughters houses and their workers.
-Advice : Never look at her in the eyes.
+! La base de donnée Strapi est uniquement en local.
 
-- Sabine Carabine
-She lived on the roof of the highest buildings watching at anything happening in the city.
-If you bully any animals, she build an algorithm parsing all the city that trigger a .9mm bullet going through your head in a second.
-Advice : Wear an heavy armor even on your bed.
-
-- Geoffrey Crochet
-
-- Lucas Katana
-What is the difference between a good or a bad hunter ?
-Lucas slices the first in 5 pieces. 
-But for second it's totally different: he slices in 5 pieces then send all of them to your family.
-Advice : Don't sleep during the night.
+Reste à développer :
+- Ajustement Navigation entre les pages
+- Récupération données du formulaire
+- Deployement BDD Strapi en ligne
 
