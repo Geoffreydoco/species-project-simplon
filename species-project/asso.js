@@ -12,12 +12,16 @@ console.log(nombre)
 
 
 
-fetcharticle();
-function fetcharticle() {
-  const Cartes = fetch('http://localhost:1337/associations')
+fetcharticle("");
+function fetcharticle(type) {
+  const Cartes = fetch('http://localhost:1337/associations?Titre_contains='+type)
     .then(response => response.json())
     .then(data => {
-      console.log(data);     
+      console.log(data); 
+      if (data.length==0){
+        pageasso.innerHTML = "<span class='messageerreur erreurasso mb-4'>Aucun article ne correspond à votre recherche</span>"
+    }
+    else    
       ///insert here data    
       pageasso.innerHTML = (
         data.map(data =>
@@ -46,6 +50,16 @@ function fetcharticle() {
     }
     )
 }
+
+
+let barrederecherche = document.querySelector(".searcharticle");
+barrederecherche.addEventListener('input', (e) =>{
+    valeursaisierecherche = e.target.value;    
+    fetcharticle(valeursaisierecherche);
+});
+
+
+
 
 // const results = document.getElementById('results');
 

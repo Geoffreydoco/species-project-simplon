@@ -1,7 +1,11 @@
 const pagearticle = document.querySelector(".pagearticles");
+let adressearticle = "";
+console.log(window.location.search)
+adressearticle = window.location.search.replaceAll("%20", ' ').replaceAll("?",'');
+console.log(adressearticle);
 
 
-fetcharticle("");
+fetcharticle(adressearticle);
 function fetcharticle(valeur) {
     const Cartes = fetch('http://localhost:1337/articles?titre_contains='+valeur)
         .then(response => response.json())
@@ -28,6 +32,7 @@ function fetcharticle(valeur) {
             <small class="text-muted">Source : ${data.source}</small></p>
             <p class="card-text">
             <small class="text-muted">Date de publication : ${data.datepublication}</small></p></div>
+            <span
       </div>
       </div>
           `
@@ -39,7 +44,7 @@ function fetcharticle(valeur) {
 
 let barrederecherche = document.querySelector(".searcharticle");
 barrederecherche.addEventListener('input', (e) =>{
-    valeursaisierecherche = e.target.value;    
+ let valeursaisierecherche = e.target.value;    
     fetcharticle(valeursaisierecherche);
 });
 

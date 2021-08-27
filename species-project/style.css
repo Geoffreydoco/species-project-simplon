@@ -1,24 +1,28 @@
  /* CSS de page d'acceuil      */
-           
+       
+ 
+   .navbarspecies{
+       transform: translateY(60px);
+       z-index: 10;
+   }
 
      /* CSS carte article p acceuil */
 
-     body {
-        background-color: #fcbf49;
+     body{
+        background-color: black !important;
+        
       }
       
       .wrapper {
         margin: 10vh;
       }
       
+       
       .card {
         border: none;
         transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
         overflow: hidden;
         border-radius: 20px !important;
-       
-        
-        
         
       }
       .cardaccueil{
@@ -118,6 +122,9 @@
  }
  
 /*Profile Card asso */
+.containeraccueilass{
+    background-color: white;
+}
 .profile-card-3 {
     font-family: 'Open Sans', Arial, sans-serif;
     position: relative;
@@ -272,10 +279,20 @@ background-color: rgb(180, 135, 135);
     font-size: 30px;
     border: 3px solid black;
     border-radius: 10px;
-    width: 500px !important;
+    width: 300px !important;
     background: rgb(0,0,0);
     background: linear-gradient(246deg, rgb(141, 163, 151) 23%, rgba(252,176,69,1) 100%);
 }
+
+
+
+
+ .erreurasso{
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 1000px;
+}
+
 
 
 .cartpagearticle{
@@ -285,11 +302,20 @@ background-color: rgb(180, 135, 135);
 
 }
 
+.imgcarosel1, .imgcarosel2, .imgcarosel3{
+    
+    width: 1500px  !important;
+    height: auto !important;
+}
+
 
 @media (min-width:768px) {
     .imgpagearticle{
         height: 500px !important;
     } 
+    .navbarspecies{
+        background-image: none !important;
+    }
 }
  
 
@@ -329,7 +355,7 @@ background-color: rgb(180, 135, 135);
 }
 
 .searcharticle{
-    width: 300px !important;
+    width: 250px !important;
 }
 
 
@@ -383,6 +409,7 @@ background-color: rgb(180, 135, 135);
 .cardartic{
     margin-left: auto;
     margin-right: auto;
+   
 }
 
 /*card assoaccueil */
@@ -390,7 +417,8 @@ background-color: rgb(180, 135, 135);
     /*  Helper Styles */
     body {
         font-family: Varela Round;
-        background: #f1f1f1;
+        
+        
     }
 
     a {
@@ -408,6 +436,7 @@ background-color: rgb(180, 135, 135);
         max-height: 100%;
         max-width: 100%;
         border-radius: 8px 8px 0px 0;
+        
     }
 
     .card-action {
@@ -494,8 +523,18 @@ background-color: rgb(180, 135, 135);
     }
     .imgassoaccueil{
         height: 200px !important;
-         
-         
-        
-        
     }
+
+    footer {
+        position: relative;
+        bottom: 0px;
+        width: 100%; 
+    }
+
+    
+
+
+    .formul{
+        color: rgb(173, 169, 169);
+    }
+ 

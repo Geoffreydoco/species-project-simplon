@@ -1,12 +1,12 @@
 // Importations 3 cartes d'asoos au hasard 
 const pageasso = document.querySelector(".pagecartes");
-async function nombredasso (){
-var nmbrasso = fetch('http://localhost:1337/associations/count')
-.then(response =>response.json())
-.then(data => {
-  console.log(data)
-  
-})
+async function nombredasso() {
+  var nmbrasso = fetch('http://localhost:1337/associations/count')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+
+    })
 }
 var nombre = nombredasso();
 console.log(nombre)
@@ -16,7 +16,7 @@ function fetcharticle() {
   const Cartes = fetch('http://localhost:1337/articles?id=1&id=4&id=6')
     .then(response => response.json())
     .then(data => {
-      console.log(data);     
+      console.log(data);
       ///insert here data    
       pageasso.innerHTML = (
         data.map(data =>
@@ -42,18 +42,18 @@ function fetcharticle() {
           </div>
         </div>
         `
-         
+
         )
       ).join('')
-      
-let blockasso = document.querySelector(".pagecartes");
-let titrearticle = document.querySelector(".titreart");
-blockasso.addEventListener('click', (event) => {
- let articlerecherche = titrearticle.innerHTML;
-  console.log(articlerecherche);
-  window.location.href= "http://127.0.0.1:5500/species-project/article.html/'"+articlerecherche+'"';
 
-})
+      let blockasso = document.querySelector(".pagecartes");
+      let titrearticle = document.querySelector(".titreart");
+      blockasso.addEventListener('click', (event) => {
+        let articlerecherche = titrearticle.innerHTML;
+
+        window.location.href = "http://127.0.0.1:5500/species-project/article.html?" + articlerecherche;
+
+      })
     }
     )
 }
@@ -65,7 +65,7 @@ function fetchasso() {
   const association = fetch('http://localhost:1337/associations?id_eq=7&id_eq=5&id_eq=3')
     .then(response => response.json())
     .then(data => {
-      console.log(data);     
+      console.log(data);
       ///insert here data    
       assoacceuil.innerHTML = (
         data.map(data =>
@@ -85,7 +85,7 @@ function fetchasso() {
 </div>
           
           `
-         
+
         )
       ).join('')
 
@@ -103,7 +103,7 @@ function fetchasso() {
   const association = fetch('http://localhost:1337/associations?id_eq=7&id_eq=5&id_eq=3&id_eq=9')
     .then(response => response.json())
     .then(data => {
-      console.log(data);     
+      console.log(data);
       ///insert here data    
       carteassoacceuil.innerHTML = (
         data.map(data =>
@@ -113,22 +113,37 @@ function fetchasso() {
               <div class="card-image">
                   <img
                       src="http://localhost:1337${data.Logo.url}" class="imgassoaccueil"/>
-              </div>
-
-             
-              <div class="card-heading">
-              ${data.Titre}
-              </div>         
-              
+              </div>             
+              <div class="card-heading"> ${data.Titre}
+              </div>                       
           </div>
-          <a href="#" class="card-button boutonasso"> En savoir plus ...</a>
-      </div>
-          
+          <a href="http://127.0.0.1:5500/species-project/lesAssos.html"> <button class="card-button boutonasso"> En savoir plus ...</button></a>
+      </div>          
           `
-         
         )
-      ).join('')
+      ).join('');
+
 
     }
     )
 }
+
+let imgcarousel1 =document.querySelector(".imgcarosel1");
+let imgcarousel2 =document.querySelector(".imgcarosel2");
+let imgcarousel3 =document.querySelector(".imgcarosel3");
+fetchcaroussel();
+function fetchcaroussel() {
+  const association = fetch('http://localhost:1337/carousels/')
+    .then(response => response.json())
+    .then(data => {
+      
+      let lien1 =data[0].imgCarousel[0].url;
+      imgcarousel1.src ="http://localhost:1337"+lien1;
+      let lien2 =data[1].imgCarousel[0].url;
+      imgcarousel2.src ="http://localhost:1337"+lien2;
+      let lien3 =data[2].imgCarousel[0].url;
+      imgcarousel3.src ="http://localhost:1337"+lien3;
+          
+    
+    }
+     ) }
